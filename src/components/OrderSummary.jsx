@@ -12,12 +12,16 @@ export default function OrderSummary() {
         dispatch(resetCart());
     };
 
+    const handlePlaceOrder = () => {
+        alert(`Successfully placed order of ${totalQuantity} honey jars for €${Number(totalPrice).toFixed(2)}`);
+        dispatch(resetCart());
+    };
+
     return (
         <div className="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-gray-200 shadow-lg">
             <div className="max-w-7xl mx-auto p-6">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
 
-                    {/* Left: Order Info */}
                     <div className="flex gap-8">
                         <div>
                             <p className="text-sm text-gray-600 mb-1">Total Items</p>
@@ -29,9 +33,7 @@ export default function OrderSummary() {
                         </div>
                     </div>
 
-                    {/* Right: Buttons */}
                     <div className="flex gap-4">
-                        {/* Reset Button */}
                         <button
                             onClick={handleReset}
                             className="px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold rounded-lg transition-colors"
@@ -39,9 +41,9 @@ export default function OrderSummary() {
                             Reset Selection
                         </button>
 
-                        {/* Order Button */}
                         <button
                             disabled={!isOrderValid}
+                            onClick={handlePlaceOrder}
                             className={`px-8 py-3 font-semibold rounded-lg transition-colors ${
                                 isOrderValid
                                     ? 'bg-amber-500 hover:bg-amber-600 text-white cursor-pointer'
@@ -53,7 +55,6 @@ export default function OrderSummary() {
                     </div>
                 </div>
 
-                {/* Minimum Order Message */}
                 {!isOrderValid && (
                     <div className="mt-4 text-sm text-orange-600 font-medium">
                         ⚠️ You need at least 5 jars to place an order. Currently: {totalQuantity} jars

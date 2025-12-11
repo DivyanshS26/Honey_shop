@@ -23,20 +23,19 @@ export default function HoneyItem({ productId }) {
 
     return (
         <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-            {/* Product Image */}
-            <div className="mb-4 overflow-hidden rounded-md bg-gray-100 h-48">
+
+            <div className="mb-4 overflow-hidden rounded-md bg-gray-100 h-48 flex items-center justify-center">
                 <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform"
+                    className="h-full w-auto object-contain hover:scale-105 transition-transform"
                 />
             </div>
 
-            {/* Product Info */}
+
             <h3 className="text-lg font-semibold text-gray-800 mb-2">{product.name}</h3>
             <p className="text-2xl font-bold text-amber-600 mb-4">€{product.price.toFixed(2)}</p>
 
-            {/* Quantity Controls */}
             <div className="flex items-center gap-3 mb-4">
                 <button
                     onClick={handleDecrement}
@@ -61,7 +60,6 @@ export default function HoneyItem({ productId }) {
                 </button>
             </div>
 
-            {/* Subtotal */}
             <div className="text-sm text-gray-600">
                 Subtotal: <span className="font-semibold">€{(product.price * product.quantity).toFixed(2)}</span>
             </div>

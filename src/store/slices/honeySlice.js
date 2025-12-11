@@ -1,25 +1,28 @@
 import { createSlice } from '@reduxjs/toolkit';
+import bluetenhonig from '../../assets/bluetenhonig.png';
+import sommerbluetenhonig from '../../assets/sommerbluetenhonig.png';
+import waldhonig from '../../assets/waldhonig.png';
 
 const initialHoneyData = [
     {
         id: 1,
-        name: 'Wildflower Honey',
+        name: 'Blossom Honey',
         price: 12.99,
-        image: 'https://www.littleoverapiaries.com/wp-content/uploads/2009/10/190717-Littleover-Apiaries_Organic_Wildflower_0015_hi-res_retouch_900px.jpg',
+        image: bluetenhonig,
         quantity: 0,
     },
     {
         id: 2,
-        name: 'Clover Honey',
+        name: 'Summer Blossom Honey',
         price: 14.99,
-        image: 'https://www.littleoverapiaries.com/wp-content/uploads/2009/10/190717-Littleover-Apiaries_Pure_Organic_Clover_0022_hi-res_retouch_900px.jpg',
+        image: sommerbluetenhonig,
         quantity: 0,
     },
     {
         id: 3,
-        name: 'Acacia Honey',
+        name: 'Forest Honey',
         price: 16.99,
-        image: 'https://www.littleoverapiaries.com/wp-content/uploads/2009/10/190717-Littleover-Apiaries_Acacia_0005_hi-res_retouch_900px-1.jpg',
+        image: waldhonig,
         quantity: 0,
     },
 ];
